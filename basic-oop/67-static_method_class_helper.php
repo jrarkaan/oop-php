@@ -1,13 +1,9 @@
 <?php
     class ProdukHelper {
-        private $regex = "/^[A-Z]{3}[0-9]{3}$/";
-
-        public function __construct(){
-            $this->regex = $this->regex;
-        }
+        private static $regex = "/^[A-Z]{3}[0-9]{3}$/";
 
         public function cekValidSKU($sku){
-            return preg_match("/^[A-Z]{3}[0-9]{3}$/" ,$sku);
+            return preg_match(self::$regex ,$sku);
         }
 
     }
